@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    
+    <context id="migrant-orm">
+
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
+                        password="YanYuXuan520"/>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
+                        password="123456"/>
+
+        <javaModelGenerator targetPackage="com.feitang.orm.domain"
+                            targetProject="src/main/java">
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.feitang.orm.persistence"
+                         targetProject="src/main/java"/>
+        <javaClientGenerator targetPackage="com.feitang.orm.persistence"
+                             targetProject="src/main/java" type="XMLMAPPER">
+
+        </javaClientGenerator>
+
+
+
+        <table tableName="city" domainObjectName="City">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="country" domainObjectName="Country">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+		<table tableName="user_info" domainObjectName="UserInfo">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
